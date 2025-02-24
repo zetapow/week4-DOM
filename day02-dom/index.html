@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="script.js" defer></script>
+      <title>Document</title>
+      <style>
+         body {
+            background-color: gray;
+         }
+
+         button:hover {
+            cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <section>
+         <h1 id="header" class="header">DOM stuff</h1>
+         <p>textContent - changes text inside element</p>
+         <p>innerHTML- changes HTML inside element</p>
+         <p>style - changes styles on an element</p>
+
+         <p class="triplets">Goodbye</p>
+         <p class="triplets">Farewell</p>
+         <p class="triplets">Good Night</p>
+
+         <button onclick="changeColour()">Change Colour</button>
+         <button onclick="multiColour()">Multi Colour (array)</button>
+         <button onclick="randColour()">Random Colour</button>
+      </section>
+
+      <section>
+         <h2 class="counter-block">Counter: <span class="counter">0</span></h2>
+
+         <button onclick="addCount()">Click to add count</button>
+
+         <button onclick="reset()">Reset Counter</button>
+      </section>
+   </body>
+</html>
