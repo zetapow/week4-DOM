@@ -1,8 +1,29 @@
 .characters p {
    display: inline;
 }
+section {
+   margin: 1.5em 0.75em;
+}
 
 button {
    display: block;
+   background-color: black;
+   color: white;
 }
 
+#my-div {
+   display: flex;
+   height: 300px;
+   width: 50%;
+   background-color: pink;
+   align-items: center;
+   justify-content: center;
+}
+
+input {
+   padding: 0.5em;
+   margin: 0.25em;
+   border: 1px black dashed;
+   width: 25%;
+   border-radius: 15%;
+}
