@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="app.js" defer></script>
+      <title>JQuery</title>
+      <script>
+         $(document).ready(function () {
+            $('button.hide').click(function () {
+               $('p').hide();
+            });
+         });
+         $(document).ready(function () {
+            $('button.show').click(function () {
+               $('p').show();
+            });
+         });
+         $(document).ready(function () {
+            $('button.toggle').click(function () {
+               $('p').toggle();
+            });
+         });
+
+         $(document).ready(function () {
+            // on click, alert html content of id=test
+            $('button.test').click(function () {
+               // alert('Old HTML: ' + $('#test').html());
+            });
+         });
+         $(document).ready(function () {
+            // on click, change content of id=test
+            $('button.test').click(function () {
+               $('#test').html("<b>G'day maaaaaate</b>");
+
+               // css({'propertyname':'value', 'propertyname':'value'})
+               $('#test').css({
+                  color: 'purple',
+                  'text-decoration': 'underline',
+               });
+            });
+         });
+
+         $(document).ready(function () {
+            $('button.display').click(function () {
+               $('#display').text('Return to sender');
+            });
+         });
+         $(document).ready(function () {
+            $('button.display').click(function () {
+               $('.example').css('background-color', 'grey');
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <section>
+         <h1>JQuery</h1>
+         <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+            mollitia incidunt accusamus dicta molestiae voluptas eligendi labore
+            assumenda, accusantium dignissimos, iste tenetur ex eaque ipsa
+            itaque fugiat? Vel, ducimus praesentium?
+         </p>
+         <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+            mollitia incidunt accusamus dicta molestiae voluptas eligendi labore
+            assumenda, accusantium dignissimos, iste tenetur ex eaque ipsa
+            itaque fugiat? Vel, ducimus praesentium?
+         </p>
+
+         <button class="hide">Click to hide paragraphs</button>
+         <button class="show">Click to show paragraphs</button>
+         <button class="toggle">Click to toggle paragraphs</button>
+      </section>
+
+      <!-- $(selector).action() 
+      Selectors $('p'), $('#id'), ('.class') ('*') all elements
+      
+      
+   jQuery methods
+   text() access to text inside element
+   click() eventlistener
+   dblclick()
+   mouseenter()
+   mouseleave()
+   hide();
+   show()
+   toggle() between hidden and shown
+   animate()
+   css()   -->
+      <section>
+         <h2 id="test">This is a heading</h2>
+         <button class="test">Click to set heading</button>
+      </section>
+
+      <section class="example">
+         <h2 id="display"></h2>
+         <button class="display">Stuff happens</button>
+         <button class="example">change colour</button>
+      </section>
+   </body>
+</html>
