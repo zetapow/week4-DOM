@@ -32,7 +32,11 @@ const sliceEx = ['html', 'css', 'JS', 'react'];
 const resultSlice = sliceEx.slice(2, 3);
 console.log(resultSlice);
 
-/* Array.splice() modify by add, remove, replace elements at positions
+const spliceEx = ['html', 'css', 'react'];
+spliceEx.splice(2, 0, 'JS');
+console.log(spliceEx);
+
+/* Array.splice() modify by add, remove, replace elements at positioAns
 allows changes to array in place instead of creating new array
 returns array of deleted elements */
 const months = ['Jan', 'March', 'April', 'June'];
@@ -57,25 +61,23 @@ console.log(numSplice);
 
 const iceCreamsForEach = iceCreams;
 iceCreamsForEach.forEach(function (iceCream, index) {
-   console.log(iceCream + ' ice-cream');
+   console.log(`${iceCream} ice-cream`);
 });
 
 const iceCreamMap = iceCreams;
 const orderedIceCream = iceCreamMap.map((icecream, index) => {
-   return `Flavour ${index}: ${icecream}`;
+   return `Flavour ${index + 1}: ${icecream}`;
 });
 console.log(orderedIceCream);
 
 const numArray = [1, 2, 3, 4, 5];
-const doubleArray = numArray.map((num) => {
-   return num * 2;
-});
+const doubleArray = numArray.map((num) => num * 2);
 
 console.log(doubleArray);
 
 // Array.filter() return new array with all elements in OG that passed a test. Creates new array. takes index and og array as args
 const icecreamCosts = [2.5, 5, 7.5];
-const cheapIcecream = icecreamCosts.filter(function (cost, index, array) {
+const cheapIcecream = icecreamCosts.filter((cost) => {
    return cost < 3;
 });
 console.log(cheapIcecream);
@@ -90,6 +92,11 @@ console.log(evenArray);
 
 const thingsArray = ['mouse', 'keyboard', 'monitor', 'headphones'];
 
+console.log('includes exercise');
+// const userGuess = prompt("guess what's in the array").toLowerCase();
+// console.log(userGuess);
+// console.log(thingsArray.includes(userGuess));
+
 console.log(thingsArray.includes('mouse')); // return true
 console.log(thingsArray.includes('money')); // return false
 
@@ -102,20 +109,45 @@ console.log(strawberryIndex);
 
 /* take string and convert first letter of every word to uppercase, every other letter to lowercase */
 
-const testString = 'gOoD mOrNiNg tO yOu';
-
 function doThings(array) {}
-
 // const orderedIceCream = iceCreamMap.map((icecream, index) => {
 //    return `Flavour ${index}: ${icecream}`;
 // });
+const testString = 'gOoD mOrNiNg tO yOu';
 
-// split words into array
-const stringArray = testString.split(' ');
-console.log(stringArray);
+const convertString = (string) => {
+   // split words into array
+   // Split words seperated by spaces
+   const stringArray = testString.split(' ');
+   console.log(stringArray);
+   // process each word - first letter uppercase, following letters lowercase
+   const processWords = stringArray.map(
+      (words) => words[0].toUpperCase() + words.slice(1).toLowerCase()
+   );
+   console.log(processWords);
+   // Join words back to string
+   const joinWords = processWords.join(' ');
+   console.log(joinWords);
+   /* ---------------- Combine into function -------------------------*/
+   //  chain all methods
+   return string
+      .toLowerCase()
+      .split(' ')
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(' ');
+};
+// const eachWord = string
+//    .split(' ')
+//    .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase());
+// return eachWord.join(' ');
 
-// convert to upper and lowercase
-const convertString = doThings(testString);
+// return string
+//    .split(' ')
+//    .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+//    .join(' ');
+
+console.log('------ From convertString function--------------');
+console.log(convertString(testString));
 
 // function toTitleCase(str) {
 //    return str
